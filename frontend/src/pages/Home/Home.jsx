@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Hero from './Hero';
 import NewsCard from '../../components/Utils/NewsCard';
+import UserCard from '../../components/Utils/UserCard';
 
 const Home = () => {
   const [users, setUsers] = useState([]);
@@ -28,10 +29,11 @@ const Home = () => {
   return (
     <>
       <Hero />
-
+      <UserCard/>
       <div className='flex gap-2 p-4 flex-wrap'>
-        {users.map((user) => (
+        {users.map((user, index) => (
           <NewsCard 
+            key={index}
             content={content}
             thumbnail={thumbnail}
             sourceLogo={sourceLogo}

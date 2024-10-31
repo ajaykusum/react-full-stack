@@ -2,19 +2,25 @@ import React from 'react';
 
 const NewsCard = ({ headline, content, source, sourceLogo, time, thumbnail }) => {
     return (
-        <div className='bg-slate-100 shadow-md max-w-md rounded-sm p-4 m-4'>
-            <div className="flex gap-4">
-                <div className="w-2/3">
+        <div className='bg-slate-100 shadow-md max-w-md rounded-sm m-4'>
+
+            <div className="flex gap-2">
+                <div className="w-2/3 p-4 pr-0">
                     <h3 className='font-semibold text-lg'>{headline}</h3>
                     <p className='text-base text-slate-600 overflow-hidden h-20'>
                         {content}
                     </p>
                 </div>
-                <div className='w-1/3 bg-indigo-300'>
-                    <img src={thumbnail} alt="" />
+                <div className='p-4 pl-0 w-1/3 overflow-hidden'>
+                    <img
+                        src={thumbnail}
+                        alt="thumbnail"
+                        className='w-full h-full object-cover'
+                    />
                 </div>
             </div>
-            <div className='flex justify-between items-center mt-4'>
+
+            <div className='p-4 pt-0 flex justify-between items-center mt-4'>
                 <div className='flex gap-2 items-center'>
                     <div className="w-8 h-8 flex items-center justify-center overflow-hidden">
                         <img

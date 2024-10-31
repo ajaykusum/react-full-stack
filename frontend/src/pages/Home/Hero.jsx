@@ -4,7 +4,7 @@ const Hero = () => {
     return (
         <>
             <div id='hero' className="mx-auto w-full py-16 text-center bg-slate-950 relative">
-                <div className="dotted-background absolute z-0"></div>
+                <div className="dotted-background absolute w-full h-full top-0 left-0 z-0"></div>
                 
                 <button className="px-4 py-2 rounded-md text-white text-center relative overflow-hidden">
                     <div className="z-10 flex mb-6 items-center justify-center">
@@ -21,9 +21,10 @@ const Hero = () => {
                     </div>
                 </button>
 
-                <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-6xl">Social <span className="bg-gradient-to-tl from-slate-800 via-violet-500 to-zinc-400 bg-clip-text text-transparent">Welfare</span>
+                <h1 className="z-1 relative text-4xl font-extrabold tracking-tight text-white sm:text-6xl">Social <span className="bg-gradient-to-tl from-slate-800 via-violet-500 to-zinc-400 bg-clip-text text-transparent">Welfare</span>
                 </h1>
-                <p className="mt-6 text-lg leading-8 max-w-2xl mx-auto text-slate-300">
+
+                <p className="z-1 relative mt-6 text-lg leading-8 max-w-2xl mx-auto text-slate-300">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore pariatur non, quaerat placeat unde, aspernatur porro debitis tempora ea fugit temporibus, eligendi consequuntur reprehenderit cumque maiores vel ab dignissimos consectetur?
                 </p>
             </div>
