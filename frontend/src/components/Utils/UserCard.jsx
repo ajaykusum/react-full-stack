@@ -2,7 +2,7 @@ import React from 'react'
 
 const UserCard = () => {
     return (
-        <div className='flex gap-4 p-4 bg-slate-200 rounded m-8'>
+        <div className='flex gap-4 p-4 bg-slate-200 rounded m-8 max-w-[700px]'>
             <div className="flex-1 rounded bg-slate-400">
                 user profile
             </div>
