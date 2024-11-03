@@ -34,6 +34,23 @@ const Footer = () => {
       ]
     },
     {
+      heading: 'Company',
+      links: [
+        {
+          href: '#',
+          text: 'About us'
+        },
+        {
+          href: '#',
+          text: 'Careers'
+        },
+        {
+          href: '#',
+          text: 'Contact us'
+        }
+      ]
+    },
+    {
       heading: 'Further Information',
       links: [
         {

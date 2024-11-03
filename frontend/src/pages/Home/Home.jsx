@@ -3,6 +3,8 @@ import axios from 'axios';
 import Hero from './Hero';
 import NewsCard from '../../components/Utils/NewsCard';
 import UserCard from '../../components/Utils/UserCard';
+import CourseCard from '../../components/Utils/CourseCard';
+import Service from '../../components/Service/Service';
 
 const Home = () => {
   const [users, setUsers] = useState([]);
@@ -29,7 +31,21 @@ const Home = () => {
   return (
     <>
       <Hero />
-      <UserCard/>
+      <Service/>
+      <UserCard
+        userName={'Abhijeet Singh'}
+        content={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis totam quod, a et necessitatibus atque? Ipsa quos maxime eius odit.'}
+        tags={['lorem', 'ipsum', 'dolor']}
+        img={'https://as1.ftcdn.net/v2/jpg/06/05/11/12/1000_F_605111295_QyQY4Tk7bv8789bFA0TgGKeTM4zzowdo.jpg'}
+      />
+      <CourseCard
+        img={'https://user-images.githubusercontent.com/52977034/212036784-9ea937a6-f6d7-4d1f-8acf-f2975ff7ab5c.png'}
+        courseTitle={'Course Title'}
+        couseDescription={'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate, quibusdam.'}
+        rating={'4.2'}
+        review={'2.5k'}
+        badge={'offer 20%'}
+      />
       <div className='flex gap-2 p-4 flex-wrap'>
         {users.map((user, index) => (
           <NewsCard 
