@@ -8,7 +8,7 @@ const BottomNavbar = () => {
         },
         {
             text: 'News Events',
-            href: '/',
+            href: '/news',
         },
         {
             text: 'Courses',
@@ -32,7 +32,7 @@ const BottomNavbar = () => {
         },
     ]
     return (
-        <div id="bottom-nav" className="p-4 flex justify-center bg-slate-200">
+        <div id="bottom-nav" className="p-2 flex justify-center bg-slate-200">
             <ul className="flex gap-4 font-semibold text-slate-700">
                 {
                     options.map(({text, href})=>(

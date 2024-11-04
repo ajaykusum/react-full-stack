@@ -2,7 +2,7 @@ import React from 'react';
 
 const NewsCard = ({ headline, content, source, sourceLogo, time, thumbnail }) => {
     return (
-        <div className='bg-slate-100 shadow-md max-w-md rounded-sm m-4'>
+        <div className='bg-slate-100 shadow-md max-w-sm rounded-sm m-4'>
 
             <div className="flex gap-2">
                 <div className="w-2/3 p-4 pr-0">
