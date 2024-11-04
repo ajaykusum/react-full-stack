@@ -36,7 +36,7 @@ const BottomNavbar = () => {
             <ul className="flex gap-4 font-semibold text-slate-700">
                 {
                     options.map(({text, href})=>(
-                        <li key={text} className='border-b-2 hover:border-indigo-300 transition duration-300'>
+                        <li key={text} className='border-b-2 text-sm hover:border-indigo-300 transition duration-300'>
                             <Link to={href}>{text}</Link>
                         </li>
                     ))

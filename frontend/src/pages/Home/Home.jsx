@@ -6,7 +6,7 @@ import UserCard from '../../components/Utils/UserCard';
 import CourseCard from '../../components/Utils/CourseCard';
 import Service from '../../components/Service/Service';
 import TeamMember from '../../components/TeamMember/TeamMember';
-import { AnimatedListDemo } from '../../components/Notification/Notification';
+import Contact from '../../components/Contact.jsx/Contact';
 
 const Home = () => {
   const [users, setUsers] = useState([]);
@@ -35,7 +35,6 @@ const Home = () => {
       <Hero />
       <Service />
       <TeamMember />
-      <AnimatedListDemo/>
       <UserCard
         userName={'Abhijeet Singh'}
         content={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis totam quod, a et necessitatibus atque? Ipsa quos maxime eius odit.'}
@@ -69,6 +68,7 @@ const Home = () => {
           />
         ))}
       </div>
+      <Contact/>
     </>
   );
 };
