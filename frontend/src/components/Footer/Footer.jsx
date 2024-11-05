@@ -33,7 +33,7 @@ const Footer = () => {
         }
       ]
     },
-    
+
     {
       heading: 'Further Information',
       links: [
@@ -51,39 +51,41 @@ const Footer = () => {
   ]
   return (
     <footer className='bg-slate-950 text-slate-50 p-4 relative'>
-      <div className='dotted-background absolute top-0 left-0 w-full h-full z-0'></div>
+      <div className='max-w-screen-xl m-auto'>
+        <div className='dotted-background absolute top-0 left-0 w-full h-full z-0'></div>
 
-      <div className='flex gap-4 relative z-1'>
-        <div>
-          <div className='flex gap-4 justify-between mb-8'>
-            <Card
-              heading={'Simplicity'}
-              content={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, numquam?'}
-            />
-            <Card
-              heading={'Simplicity'}
-              content={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, numquam?'}
-            />
-            <Card
-              heading={'Simplicity'}
-              content={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, numquam?'}
-            />
+        <div className='flex gap-4 relative z-1'>
+          <div>
+            <div className='flex gap-4 justify-between mb-8'>
+              <Card
+                heading={'Simplicity'}
+                content={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, numquam?'}
+              />
+              <Card
+                heading={'Simplicity'}
+                content={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, numquam?'}
+              />
+              <Card
+                heading={'Simplicity'}
+                content={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, numquam?'}
+              />
+            </div>
+
+            <div className='flex justify-between mb-4'>
+              {
+                items.map(({ heading, links }, index) => (
+                  <List
+                    key={index}
+                    heading={heading}
+                    links={links}
+                  />
+                ))
+              }
+            </div>
           </div>
 
-          <div className='flex justify-between mb-4'>
-            {
-              items.map(({ heading, links }, index) => (
-                <List
-                  key={index}
-                  heading={heading}
-                  links={links}
-                />
-              ))
-            }
-          </div>
+          <EmbededMap />
         </div>
-
-        <EmbededMap />
       </div>
     </footer>
   )

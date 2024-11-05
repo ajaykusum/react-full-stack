@@ -12,15 +12,15 @@ const BottomNavbar = () => {
         },
         {
             text: 'Courses',
-            href: '/',
+            href: '/courses',
         },
         {
             text: 'Campaign',
-            href: '/',
+            href: '/campaign',
         },
         {
             text: 'Media',
-            href: '/',
+            href: '/media',
         },
         {
             text: 'Promotion',

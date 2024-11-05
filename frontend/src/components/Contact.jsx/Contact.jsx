@@ -18,7 +18,7 @@ const List = ({ icon }) => {
 const Contact = () => {
     return (
         <div className='py-8'>
-            <div className='text-center max-w-2xl m-auto'>
+            <div className='text-center max-w-screen-xl m-auto'>
                 <h4 className='text-indigo-600 font-semibold'>Contact Us!</h4>
                 <h3 className='flex items-center justify-center gap-1 font-bold text-xl text-slate-900'>
                     Get in touch
@@ -27,7 +27,7 @@ const Contact = () => {
                 <p className='text-slate-600 mb-8'>Empowering Citizens with Essential Welfare Services, Support Programs, and Opportunities for a Better, Inclusive Future.</p>
             </div>
 
-            <div className='max-w-4xl m-auto grid grid-cols-2 p-4 rounded-xl bg-slate-100 border border-slate-400'>
+            <div className='max-w-4xl m-auto grid grid-cols-2 p-4 rounded-xl bg-slate-50 border border-slate-400'>
                 <div className='pr-4'>
                     <div className='border-b border-slate-400'>
                         <strong className='text-xl font-bold mb-4'>Get in touch</strong>

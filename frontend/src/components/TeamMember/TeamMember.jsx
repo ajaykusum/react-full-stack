@@ -25,12 +25,12 @@ const TeamMember = () => {
         <div className='relative py-16 max-w-screen-xl m-auto'>
             <img className='absolute z-10 w-10 bottom-10 left-10' src={tropicalLeaf} alt="" />
             <div className='relative z-1 max-w-screen-xl m-auto'>
-                <h4 className='text-indigo-600 font-semibold'>Our Team Members</h4>
-                <h3 className='flex items-center gap-1 font-bold text-xl text-slate-900'>
+                <h4 className='text-indigo-600 font-semibold text-center'>Our Team Members</h4>
+                <h3 className='justify-center flex items-center gap-1 font-bold text-xl text-slate-900'>
                     Designation
-                    <img className='w-10' src={rocket} alt="" />
+                    {/* <img className='w-10 object-cover' src={rocket} alt="" /> */}
                 </h3>
-                <p className='text-slate-600 mb-4'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione, tempora!</p>
+                <p className='text-slate-600 mb-4 text-center'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione, tempora!</p>
 
                 <div className='flex gap-2 justify-center'>
                     {

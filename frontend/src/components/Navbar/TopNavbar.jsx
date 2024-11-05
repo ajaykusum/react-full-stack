@@ -43,7 +43,7 @@ const TopNavbar = () => {
                     Social Welfare
                 </span>
             </div>
-            <p className='font-semibold tex-base text-slate-600'>न्याय और अवसर पाहुचेंगे घर-घर</p>
+            <p className='font-semibold tex-base text-slate-600'>न्याय और अवसर पहुचेंगे घर-घर</p>
             {/* <Searchbar/> */}
             <div className="flex gap-2 items-center">
                 {/* <DropDown options={options} /> */}

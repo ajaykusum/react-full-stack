@@ -7,6 +7,10 @@ import CourseCard from '../../components/Utils/CourseCard';
 import Service from '../../components/Service/Service';
 import TeamMember from '../../components/TeamMember/TeamMember';
 import Contact from '../../components/Contact.jsx/Contact';
+import Notification from '../../components/Notification/Notification';
+import Events from '../../components/Events/Events';
+import star from '../../assets/star.png';
+
 
 const Home = () => {
   const [users, setUsers] = useState([]);
@@ -33,9 +37,26 @@ const Home = () => {
   return (
     <>
       <Hero />
+      <div>
+        <h3 className='flex items-center justify-center gap-1 font-bold text-xl text-slate-900 my-6'>
+          Trending Highlights
+          <img className='w-8' src={star} alt="" />
+        </h3>
+        <div className='max-w-screen-xl flex justify-center m-auto gap-4 pb-12 h-fit'>
+          <div>
+            <h3 className='font-semibold text-indigo-500 mb-2'>Notifications</h3>
+            <Notification />
+          </div>
+          <div>
+            <h3 className='font-semibold text-indigo-500 mb-2'>Events</h3>
+            <Events />
+          </div>
+        </div>
+      </div>
       <Service />
       <TeamMember />
-      <UserCard
+
+      {/* <UserCard
         userName={'Abhijeet Singh'}
         content={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis totam quod, a et necessitatibus atque? Ipsa quos maxime eius odit.'}
         tags={['lorem', 'ipsum', 'dolor']}
@@ -48,27 +69,30 @@ const Home = () => {
         rating={'4.2'}
         review={'2.5k'}
         badge={'offer 20%'}
-      />
+      /> */}
 
-      <h4 className='ml-4 text-indigo-600 font-semibold'>Latest News</h4>
-      <h3 className='ml-4 flex items-center gap-1 font-bold text-xl text-slate-900'>
-        What is happening
-      </h3>
+      <div className='max-w-screen-xl m-auto'>
+        <h4 className='text-indigo-600 font-semibold text-center'>Latest News</h4>
+        <h3 className='flex items-center justify-center gap-1 font-bold text-xl text-slate-900'>
+          What is happening
+        </h3>
 
-      <div className='flex gap-2 p-4 flex-wrap'>
-        {users.map((user, index) => (
-          <NewsCard
-            key={index}
-            content={content}
-            thumbnail={thumbnail}
-            sourceLogo={sourceLogo}
-            source={source}
-            time={time}
-            headline={headline}
-          />
-        ))}
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
+          {users.map((user, index) => (
+            <NewsCard
+              key={index}
+              content={content}
+              thumbnail={thumbnail}
+              sourceLogo={sourceLogo}
+              source={source}
+              time={time}
+              headline={headline}
+            />
+          ))}
+        </div>
       </div>
-      <Contact/>
+
+      <Contact />
     </>
   );
 };
