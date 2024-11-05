@@ -33,7 +33,23 @@ const Footer = () => {
         }
       ]
     },
-
+    {
+      heading: 'Company',
+      links: [
+        {
+          href: '#',
+          text: 'About us'
+        },
+        {
+          href: '#',
+          text: 'Careers'
+        },
+        {
+          href: '#',
+          text: 'Contact us'
+        }
+      ]
+    },
     {
       heading: 'Further Information',
       links: [
@@ -54,36 +70,18 @@ const Footer = () => {
       <div className='max-w-screen-xl m-auto'>
         <div className='dotted-background absolute top-0 left-0 w-full h-full z-0'></div>
 
-        <div className='flex gap-4 relative z-1'>
-          <div>
-            <div className='flex gap-4 justify-between mb-8'>
-              <Card
-                heading={'Simplicity'}
-                content={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, numquam?'}
-              />
-              <Card
-                heading={'Simplicity'}
-                content={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, numquam?'}
-              />
-              <Card
-                heading={'Simplicity'}
-                content={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, numquam?'}
-              />
-            </div>
-
-            <div className='flex justify-between mb-4'>
-              {
-                items.map(({ heading, links }, index) => (
-                  <List
-                    key={index}
-                    heading={heading}
-                    links={links}
-                  />
-                ))
-              }
-            </div>
+        <div className='flex gap-4 relative z-1 justify-between'>
+          <div className='flex justify-between gap-4 w-full mb-4'>
+            {
+              items.map(({ heading, links }, index) => (
+                <List
+                  key={index}
+                  heading={heading}
+                  links={links}
+                />
+              ))
+            }
           </div>
-
           <EmbededMap />
         </div>
       </div>
