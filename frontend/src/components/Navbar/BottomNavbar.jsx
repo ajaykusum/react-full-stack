@@ -1,5 +1,6 @@
-import React from 'react'
-import {Link} from 'react-router-dom';
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+
 const BottomNavbar = () => {
     const options = [
         {
@@ -30,20 +31,33 @@ const BottomNavbar = () => {
             text: 'Contact us',
             href: '/contact',
         },
-    ]
+    ];
+
     return (
         <div id="bottom-nav" className="p-2 flex justify-center bg-slate-200">
             <ul className="flex gap-4 font-semibold text-slate-700">
-                {
-                    options.map(({text, href})=>(
-                        <li key={text} className='border-b-2 text-sm hover:border-indigo-300 transition duration-300'>
-                            <Link to={href}>{text}</Link>
-                        </li>
-                    ))
-                }
+                {options.map(({ text, href }) => (
+                    <li key={text} className='border-b-2 text-sm transition duration-300 hover:border-indigo-300'>
+                        <NavLink
+                            to={href}
+                            className={({ isActive }) =>
+                                isActive
+                                    ? 'border-indigo-300 text-indigo-500'
+                                    : 'hover:border-indigo-300'
+                            }
+                            style={({ isActive }) =>
+                                isActive
+                                    ? { borderBottomWidth: '2px' }
+                                    : {}
+                            }
+                        >
+                            {text}
+                        </NavLink>
+                    </li>
+                ))}
             </ul>
         </div>
-    )
+    );
 }
 
-export default BottomNavbar
+export default BottomNavbar;

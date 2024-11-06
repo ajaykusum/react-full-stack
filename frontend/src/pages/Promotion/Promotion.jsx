@@ -1,8 +1,9 @@
 import React from 'react'
+import Banner from './Banner'
 
 const Promotion = () => {
   return (
-    <div>Promotion</div>
+      <Banner/>
   )
 }
 
