@@ -1,6 +1,8 @@
 import React from 'react'
 import NewsCard from '../../components/Utils/NewsCard'
 import Headline from './Headline';
+import FeaturedCard from './FeaturedCard';
+
 const TreadingNews = () => {
     return (
         <div className='w-full'>
@@ -30,24 +32,7 @@ const TreadingNews = () => {
 
 
 
-const FeaturedCard = () => {
-    return (
-        <div className='max-w-xs'>
-            <div className='bg-slate-200 rounded-lg w-full h-36 mb-2'>
-                <img className='w-full h-full object-cover' src="./" alt="thumbnail" />
-            </div>
-            <div className='flex gap-2'>
-                <h4 className='font-semibold text-sm'>Lorem ipsum, dolor sit amet consectetur adipisicing!</h4>
-                <div className='flex flex-col items-end'>
-                    <span className='text-xs font-semibold bg-violet-200 text-violet-500 px-2 py-[1px] rounded whitespace-nowrap'>hindustan times</span>
-                    <div className='text-slate-500 text-sm'>
-                        15 min ago
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
-}
+
 const News = () => {
     const data = [];
     const headline = 'Covid-19 JN.1 variant updates: India sees 22 cases'

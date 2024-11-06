@@ -24,11 +24,11 @@ const BottomNavbar = () => {
         },
         {
             text: 'Promotion',
-            href: '/',
+            href: '/promotion',
         },
         {
             text: 'Contact us',
-            href: '/',
+            href: '/contact',
         },
     ]
     return (

@@ -6,7 +6,7 @@ import UserCard from '../../components/Utils/UserCard';
 import CourseCard from '../../components/Utils/CourseCard';
 import Service from '../../components/Service/Service';
 import TeamMember from '../../components/TeamMember/TeamMember';
-import Contact from '../../components/Contact.jsx/Contact';
+import Contact from '../../components/Contact/Contact';
 import Notification from '../../components/Notification/Notification';
 import Events from '../../components/Events/Events';
 import star from '../../assets/star.png';

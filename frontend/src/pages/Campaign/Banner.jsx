@@ -22,7 +22,7 @@ const Banner = () => {
                 </div>
             </div>
             <div className='order-1 md:order-2 bg-[#f7912f] h-fit overflow-hidden rounded-lg'>
-                <img className='w-full max-h-[400px] object-contain' src={bannerImg} alt="Banner" />
+                <img className='w-full max-h-[320px] object-contain' src={bannerImg} alt="Banner" />
             </div>
         </div>
     );
