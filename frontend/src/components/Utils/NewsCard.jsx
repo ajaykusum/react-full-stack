@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NewsCard = ({ headline, content, source, sourceLogo, time, thumbnail }) => {
+const NewsCard = ({ headline, content, source, sourceLogo, time, img }) => {
     return (
         <div className='bg-slate-100 shadow-md max-w-auto rounded-sm'>
 
@@ -13,8 +13,8 @@ const NewsCard = ({ headline, content, source, sourceLogo, time, thumbnail }) =>
                 </div>
                 <div className='p-4 pl-0 w-1/3 overflow-hidden'>
                     <img
-                        src={thumbnail}
-                        alt="thumbnail"
+                        src={img}
+                        alt="img"
                         className='w-full h-full object-cover'
                     />
                 </div>

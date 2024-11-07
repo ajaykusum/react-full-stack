@@ -15,7 +15,7 @@ const Banner = () => {
 
                     <button className="bg-indigo-500 hover:bg-indigo-400 rounded-md px-4 py-[6px] text-gray-50 transition duration-300 ease-in-out transform hover:scale-105">
                         <a href="" className='flex gap-1 items-center'>
-                            <i class="uil uil-arrow-right"></i>
+                            <i className="uil uil-arrow-right"></i>
                             Learn More
                         </a>
                     </button>

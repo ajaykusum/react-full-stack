@@ -3,123 +3,224 @@ import NewsCard from '../../components/Utils/NewsCard'
 import Headline from './Headline';
 import FeaturedCard from './FeaturedCard';
 import FilterOption from '../../components/Utils/FilterOption';
+import TreadingNews from './TreadingNews';
+import newsData from './newsData.json'
 
-const TreadingNews = () => {
-    return (
-        <div className='w-full'>
-            <h3 className='font-semibold text-lg my-4'>Trending</h3>
-            <div className='bg-slate-100 rounded-lg overflow-hidden'>
-                <div className='h-72 bg-slate-300 rounded-lg'>
-                    <img className='w-full h-full object-cover' src="" alt="Trending News" />
-                </div>
-                <div className='p-4'>
-                    <div className='flex justify-between'>
-                        <div className='flex items-center gap-[2px] text-slate-500'>
-                            <i className="text-lg uil uil-history"></i>
-                            <span>123k</span>
-                        </div>
-                        <div className='flex gap-1 mb-2'>
-                            <span className='text-xs font-semibold bg-violet-200 text-violet-500 px-2 py-[1px] rounded'>#tag</span>
-                            <span className='text-xs font-semibold bg-violet-200 text-violet-500 px-2 py-[1px] rounded'>#tag</span>
-                            <span className='text-xs font-semibold bg-violet-200 text-violet-500 px-2 py-[1px] rounded'>#tag</span>
-                        </div>
-                    </div>
-                    <h2 className='font-bold text-lg'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas, eligendi.</h2>
-                </div>
-            </div>
-        </div>
-    );
-}
-
-
-const newsCategories = [
-    "World",
-    "Local",
-    "Politics",
-    "Business",
-    "Technology",
-    "Health",
-    "Science",
-    "Sports",
-    "Entertainment",
-    "Lifestyle",
-    "Education",
-    "Environment",
-    "Opinion",
-    "Weather",
-    "Crime",
+const newsCategories = ["World", "Local", "Politics", "Business", "Technology", "Health", "Science", "Sports", "Entertainment", "Lifestyle", "Education", "Environment", "Opinion", "Weather", "Crime",
 ];
+
+const treadingNewsData = [
+    {
+        views: '123k',
+        heading: 'Breaking News: Market Hits Record High',
+        tags: ['Finance', 'Market'],
+        img: 'https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg',
+    },
+    {
+        views: '98k',
+        heading: 'Tech Giants Announce New Innovations',
+        tags: ['Technology', 'Innovation'],
+        img: 'https://images.pexels.com/photos/256541/pexels-photo-256541.jpeg',
+    }
+];
+
 
 const featuredNewsData = [
     {
-        heading: "",
-        img: "",
-        source: "",
+        heading: "Global Market Trends",
+        img: "https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg",
+        source: "BBC",
         time: "15 min ago",
     },
+    {
+        heading: "Tech Innovations 2024",
+        img: "https://images.pexels.com/photos/256541/pexels-photo-256541.jpeg",
+        source: "CNN",
+        time: "30 min ago",
+    },
+    {
+        heading: "Health Breakthroughs",
+        img: "https://images.pexels.com/photos/3184631/pexels-photo-3184631.jpeg",
+        source: "Reuters",
+        time: "1 hour ago",
+    },
+    {
+        heading: "Art and Culture",
+        img: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg",
+        source: "The Guardian",
+        time: "2 hours ago",
+    },
+    {
+        heading: "Political Updates",
+        img: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg",
+        source: "Al Jazeera",
+        time: "3 hours ago",
+    },
+    {
+        heading: "Environmental News",
+        img: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg",
+        source: "BBC",
+        time: "4 hours ago",
+    },
+    {
+        heading: "Sports Highlights",
+        img: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg",
+        source: "ESPN",
+        time: "5 hours ago",
+    },
+    {
+        heading: "Business Insights",
+        img: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg",
+        source: "Bloomberg",
+        time: "6 hours ago",
+    },
+    {
+        heading: "Science Discoveries",
+        img: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg",
+        source: "Nature",
+        time: "7 hours ago",
+    },
+    {
+        heading: "Travel Tips",
+        img: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg",
+        source: "Lonely Planet",
+        time: "8 hours ago",
+    },
+    {
+        heading: "Fashion Trends",
+        img: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg",
+        source: "Vogue",
+        time: "9 hours ago",
+    },
+    {
+        heading: "Food and Recipes",
+        img: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg",
+        source: "Food Network",
+        time: "10 hours ago",
+    }
 ];
 
-const News = () => {
-    const data = [];
-    const headline = 'Covid-19 JN.1 variant updates: India sees 22 cases'
-    const thumbnail = 'https://th.bing.com/th/id/OIP.RnIbppBvRzP3AelmXcdyCgHaEK?w=270&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7';
-    const content = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, quam! Sit eveniet ut est aut impedit et, maiores quos vel.'
-    const sourceLogo = 'https://cdn.freelogovectors.net/wp-content/uploads/2021/12/hindustan-times-logo-freelogovectors.net_.png';
-    const source = 'Hindustan Times';
-    const time = '14 hrs ago';
+const headlines = [
+    {
+        img: "https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg",
+        heading: "Global Market Trends",
+        tags: ["Finance", "Market"],
+        views: "1.2K",
+        time: "2 hours ago",
+    },
+    {
+        img: "https://images.pexels.com/photos/256541/pexels-photo-256541.jpeg",
+        heading: "Tech Innovations 2024",
+        tags: ["Technology", "Innovation"],
+        views: "900",
+        time: "5 hours ago",
+    },
+    {
+        img: "https://images.pexels.com/photos/3184631/pexels-photo-3184631.jpeg",
+        heading: "Health Breakthroughs",
+        tags: ["Health", "Science"],
+        views: "1.5K",
+        time: "1 day ago",
+    },
+    {
+        img: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg",
+        heading: "Art and Culture",
+        tags: ["Art", "Culture"],
+        views: "800",
+        time: "3 days ago",
+    },
+    {
+        img: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg",
+        heading: "Political Updates",
+        tags: ["Politics"],
+        views: "1.1K",
+        time: "1 week ago",
+    },
+    {
+        img: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg",
+        heading: "Environmental News",
+        tags: ["Environment"],
+        views: "2K",
+        time: "2 weeks ago",
+    }
+];
 
-    for (let i = 0; i < 10; ++i) {
-        data.push(
-            <NewsCard
-                key={i}
-                content={content}
-                thumbnail={thumbnail}
-                sourceLogo={sourceLogo}
-                source={source}
-                time={time}
-                headline={headline}
-            />
-        );
-    }
-    const headlines = [];
-    for (let i = 0; i < 6; ++i) {
-        headlines.push(<Headline key={i} />)
-    }
-    const featuredCards = [];
-    for (let i = 0; i < 6; ++i) {
-        featuredCards.push(<FeaturedCard key={i} />)
-    }
+
+
+const News = () => {
     return (
         <div className='max-w-screen-xl m-auto'>
-            <section className='mb-20 grid grid-cols-1 md:grid-cols-2 gap-8 justify-center'>
-                <TreadingNews />
-                <TreadingNews />
+            <section className='mb-12 grid grid-cols-1 md:grid-cols-2 gap-8 justify-center'>
+                <TreadingNews
+                    heading={treadingNewsData[0].heading}
+                    img={treadingNewsData[0].img}
+                    views={treadingNewsData[0].views}
+                    tags={treadingNewsData[0].tags}
+                />
+
+                <TreadingNews
+                    heading={treadingNewsData[1].heading}
+                    img={treadingNewsData[1].img}
+                    views={treadingNewsData[1].views}
+                    tags={treadingNewsData[1].tags}
+                />
             </section>
 
-            <section className="mb-20">
+            <section className="mb-12">
                 <h3 className='font-semibold text-lg my-4'>Today's Headlines</h3>
 
                 <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2'>
-                    {headlines}
+                    {
+                        headlines.map((e, index) => (
+                            <Headline
+                                key={index}
+                                img={e.img}
+                                heading={e.heading}
+                                tags={e.tags}
+                                views={e.views}
+                                time={e.time}
+                            />
+                        ))
+                    }
                 </div>
 
             </section>
 
-            <section className="mb-20">
+            <section className="mb-12">
                 <h3 className='font-semibold text-lg my-4'>Featured News</h3>
 
                 <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 gap-y-6'>
-                    {featuredCards}
+                    {
+                        featuredNewsData.map((e, index) => (
+                            <FeaturedCard
+                                key={index}
+                                img={e.img}
+                                heading={e.heading}
+                                source={e.source}
+                                time={e.time}
+                            />
+                        ))
+                    }
                 </div>
             </section>
 
-            <section className="mb-20">
+            <section className="mb-12">
                 <h3 className='font-semibold text-lg my-4'>All News</h3>
                 <FilterOption items={newsCategories} />
                 <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
-                    {data}
+                    {
+                        newsData.map((e, index) => (
+                            <NewsCard
+                                img={e.img}
+                                headline={e.headline}
+                                content={e.content}
+                                source={e.source}
+                                sourceLogo={e.sourceLogo}
+                                time={e.time}
+                            />
+                        ))
+                    }
                 </div>
-
             </section>
         </div>
     )
