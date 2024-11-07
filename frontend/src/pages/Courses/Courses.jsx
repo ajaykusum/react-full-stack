@@ -4,6 +4,7 @@ import star from '../../assets/star.svg';
 import semiStar from '../../assets/half-star.svg';
 import Stars from '../../components/Utils/Stars';
 import Headline from '../News/Headline';
+import FilterOption from '../../components/Utils/FilterOption';
 
 const Review = () => {
   return (
@@ -29,12 +30,12 @@ const Review = () => {
 
 const Card1 = () => {
   return (
-    <div className='w-full max-w-xs'>
+    <div className='w-full max-w-xs shadow-lg rounded-lg overflow-hidden'>
       <div className='h-32 bg-slate-300'>
         <img className='w-full h-full object-cover' src="" alt="Course" />
       </div>
       <div className='p-4'>
-        <h4 className='font-semibold'>Lorem, ipsum dolor.</h4>
+        <h4 className='font-semibold text-violet-600'>Lorem, ipsum dolor.</h4>
         <p className='text-sm text-slate-500 whitespace-nowrap overflow-hidden text-ellipsis'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum, ratione.</p>
         <div className='flex items-center gap-1 mt-2'>
           <div className='font-semibold text-sm'>4.7</div>
@@ -50,6 +51,16 @@ const Card1 = () => {
 }
 
 
+const filterOptions = [
+  "Design",
+  "Engineering",
+  "Health Sciences",
+  "Humanities and Arts",
+  "Management",
+  "School",
+  "Science",
+  "All",
+];
 
 const Courses = () => {
   return (
@@ -57,17 +68,18 @@ const Courses = () => {
       <section className='mb-20'>
         <h2 className='text-2xl font-bold mb-4'>Course Category</h2>
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2'>
-          <Headline/>
-          <Headline/>
-          <Headline/>
-          <Headline/>
-          <Headline/>
-          <Headline/>
+          <Headline />
+          <Headline />
+          <Headline />
+          <Headline />
+          <Headline />
+          <Headline />
         </div>
       </section>
 
       <section className='mb-20'>
-        <h2 className='text-2xl font-bold mb-4'>Courses</h2>
+        <h2 className='text-2xl font-bold mb-4'>Explore Courses</h2>
+        <FilterOption items={filterOptions} />
         <div className='grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'>
           <Card1 />
           <Card1 />

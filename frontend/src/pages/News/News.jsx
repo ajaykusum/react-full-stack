@@ -2,6 +2,7 @@ import React from 'react'
 import NewsCard from '../../components/Utils/NewsCard'
 import Headline from './Headline';
 import FeaturedCard from './FeaturedCard';
+import FilterOption from '../../components/Utils/FilterOption';
 
 const TreadingNews = () => {
     return (
@@ -31,7 +32,32 @@ const TreadingNews = () => {
 }
 
 
+const newsCategories = [
+    "World",
+    "Local",
+    "Politics",
+    "Business",
+    "Technology",
+    "Health",
+    "Science",
+    "Sports",
+    "Entertainment",
+    "Lifestyle",
+    "Education",
+    "Environment",
+    "Opinion",
+    "Weather",
+    "Crime",
+];
 
+const featuredNewsData = [
+    {
+        heading: "",
+        img: "",
+        source: "",
+        time: "15 min ago",
+    },
+];
 
 const News = () => {
     const data = [];
@@ -82,13 +108,14 @@ const News = () => {
             <section className="mb-20">
                 <h3 className='font-semibold text-lg my-4'>Featured News</h3>
 
-                <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2'>
+                <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 gap-y-6'>
                     {featuredCards}
                 </div>
             </section>
 
             <section className="mb-20">
                 <h3 className='font-semibold text-lg my-4'>All News</h3>
+                <FilterOption items={newsCategories} />
                 <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
                     {data}
                 </div>

@@ -2,8 +2,8 @@ import React from 'react'
 
 const UserCard = ({ userName, content, tags, img }) => {
     return (
-        <div className='flex flex-col sm:flex-row gap-4 p-4 bg-slate-200 rounded m-8 max-w-[700px]'>
-            <div className="flex-1 rounded bg-slate-400 overflow-hidden">
+        <div className='flex flex-col sm:flex-row gap-4 p-4 bg-slate-200 rounded max-w-[700px]'>
+            <div className="flex-1 rounded bg-slate-400 overflow-hidden min-h-52">
                 <img src={img} alt="user profile" className='w-full h-full object-cover' />
             </div>
 
