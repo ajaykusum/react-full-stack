@@ -10,6 +10,8 @@ import Campaign from './pages/Campaign/Campaign'
 import Media from './pages/Media/Media'
 import Promotion from './pages/Promotion/Promotion'
 import ContactPage from './pages/CantactPage/CantactPage'
+import Login from './pages/Auth/Login'
+import Signup from './pages/Auth/Signup'
 
 const App = () => {
   return (
@@ -24,6 +26,8 @@ const App = () => {
           <Route path='/media' element={<Media/>}></Route>
           <Route path='/promotion' element={<Promotion/>}></Route>
           <Route path='/contact' element={<ContactPage/>}></Route>
+          <Route path='/login' element={<Login/>}></Route>
+          <Route path='/signup' element={<Signup/>}></Route>
         </Routes>
         <Footer/>
       </BrowserRouter>

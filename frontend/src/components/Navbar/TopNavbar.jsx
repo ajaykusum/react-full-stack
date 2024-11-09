@@ -1,6 +1,7 @@
 import React from 'react'
 import DropDown from '../Utils/Dropdown';
 import Searchbar from '../Utils/Searchbar';
+import {Link} from 'react-router-dom';
 const logo = 'https://icons.veryicon.com/png/o/miscellaneous/government-icon/social-public-welfare.png';
 
 const TopNavbar = () => {
@@ -48,10 +49,10 @@ const TopNavbar = () => {
             <div className="flex gap-2 items-center">
                 {/* <DropDown options={options} /> */}
                 <button className="bg-indigo-500 hover:bg-indigo-400 rounded-md px-4 py-[6px] text-gray-50">
-                    log in
+                    <Link to="/login">log in</Link>
                 </button>
                 <button className="bg-indigo-500 hover:bg-indigo-400 rounded-md px-4 py-[6px] text-gray-50">
-                    Register
+                <Link to="/signup">Sign up</Link>
                 </button>
             </div>
         </div>

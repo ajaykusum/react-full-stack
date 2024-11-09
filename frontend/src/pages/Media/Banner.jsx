@@ -8,8 +8,8 @@ const Banner = () => {
             style={{ backgroundImage: `url(${bgImg})` }}
         >
             <div className="text-zinc-700 text-center">
-                <p>loremVideo Catalog is brought to you by Templat.</p>
-                <p>this is full-width video banner</p>
+                <p>Explore Our Extensive Video Catalog</p>
+                <p>Bringing you the latest and greatest in social welfare media.</p>
             </div>
             <button className='m-8 py-2 px-8 rounded bg-zinc-900 hover:bg-zinc-800 text-white font-semibold'>
                 <a href="#">Discover</a>

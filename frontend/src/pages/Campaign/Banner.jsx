@@ -7,10 +7,10 @@ const Banner = () => {
             <div className='order-2 md:order-1 bg-slate-100 p-4 rounded-lg overflow-hidden flex items-center'>
                 <div className=''>
                     <h1 className='font-bold text-4xl'>
-                        A Full-Service Digital Marketing Agency Driven by Results
+                        Empowering Communities for a Better Tomorrow
                     </h1>
                     <p className='text-slate-600 my-4'>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque sunt harum, exercitationem deserunt neque ea expedita. Totam, mollitia! Odit delectus eveniet labore ut doloribus corporis consectetur veritatis cumque ea obcaecati.
+                        Join us in our mission to support and uplift those in need. Together, we can create a positive impact and build a brighter future for everyone.
                     </p>
 
                     <button className="bg-indigo-500 hover:bg-indigo-400 rounded-md px-4 py-[6px] text-gray-50 transition duration-300 ease-in-out transform hover:scale-105">

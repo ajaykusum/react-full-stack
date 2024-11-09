@@ -12,7 +12,7 @@ const Banner = () => {
             <div className='relative z-10 flex flex-col md:flex-row items-center justify-between w-full max-w-screen-lg p-4'>
                 <div className='order-2 md:order-1 text-white p-4'>
                     <h1 className='font-bold text-4xl uppercase'>First Deposit Bonus +180% Rewards</h1>
-                    <p className='text-zinc-300 mt-2 mb-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis cupiditate quisquam sunt nesciunt provident neque eveniet soluta nobis! Esse, at.</p>
+                    <p className='text-zinc-300 mt-2 mb-4'>Make your first deposit today and enjoy an incredible 180% bonus on your rewards. Don't miss out on this limited-time offer to boost your earnings and maximize your benefits!</p>
                     <div className='flex gap-2 mb-4'>
                         <div className='px-4 py-2 w-52 bg-yellow-500 rounded-lg text-yellow-950'>
                             <div className='font-semibold'>Price</div>
