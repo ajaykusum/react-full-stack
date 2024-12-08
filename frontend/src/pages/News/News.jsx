@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect,useState } from 'react'
+import axios from 'axios';
 import NewsCard from '../../components/Utils/NewsCard'
 import Headline from './Headline';
 import FeaturedCard from './FeaturedCard';
@@ -148,6 +149,18 @@ const headlines = [
 
 
 const News = () => {
+    const [newsd, setNewsd] = useState("");
+    const getNewsd =async () => {
+        try {
+            const response = await axios.get("http://localhost:3000/api/getnewsd");
+            setNewsd(response.data);
+        } catch (error) {
+            console.error("Error fetching news:", error);
+        }
+    }
+    useEffect(()=>{
+        getNewsd()
+    },[]);
     return (
         <div className='max-w-screen-xl m-auto'>
             <section className='mb-12 grid grid-cols-1 md:grid-cols-2 gap-8 justify-center'>
@@ -167,7 +180,7 @@ const News = () => {
             </section>
 
             <section className="mb-12">
-                <h3 className='font-semibold text-lg my-4'>Today's Headlines</h3>
+                <h3 className='font-semibold text-lg my-4'>{newsd.data}Today's Headlines</h3>
 
                 <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2'>
                     {

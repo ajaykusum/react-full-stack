@@ -1,8 +1,49 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState }  from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import img from '../../assets/neon-gradient.avif';
+import axios from 'axios';
+import Swal from 'sweetalert2';
+import localStorage from '../../../utils/localstorage';
+
 
 const Login = () => {
+    const [email, setEmail] = useState()
+    const [password, setPassword] = useState()
+    const navigate = useNavigate()
+
+    const handleSubmit = (e) =>{
+        e.preventDefault()
+        axios.post("http://localhost:3000/api/user/getUser",{email, password})
+        .then(result => {console.log(result)
+            if (result.data.message === "User found successfully") {
+                const token = result.data.token;
+                localStorage.setItem('authToken', token);
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Login Successful',
+                    text: result.data.message,
+                    timer: 2000, // Auto close after 2 seconds
+                    showConfirmButton: false
+                });
+                axios.defaults.headers['Authorization'] = `Bearer ${token}`;
+                navigate('/');
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Login Failed',
+                    text: result.data.message,
+                });
+            }
+        })
+        .catch(err => {
+            console.error(err);
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Something went wrong. Please try again later.',
+            });
+        });
+      }
     return (
         <div className='py-20 px-4'>
             <div className='overflow-hidden rounded-2xl grid sm:grid-cols-2 grid-cols-1 max-w-4xl m-auto'
@@ -21,7 +62,7 @@ const Login = () => {
 
                 <div className='p-10 bg-white'>
                     <h3 className='text-center mb-8 text-2xl text-slate-600 '>Hello! Welcome Back</h3>
-                    <form action="/login" method='post'>
+                    <form onSubmit={handleSubmit}>
                         <div className='flex flex-col mb-4'>
                             <label className='text-slate-500 font-semibold mb-2' htmlFor="email">Email</label>
                             <input
@@ -30,6 +71,7 @@ const Login = () => {
                                 name='email'
                                 className='shadow-md px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition duration-300 ease-in-out'
                                 placeholder='Enter your email'
+                                onChange={(e)=>setEmail(e.target.value)}
                             />
                         </div>
 
@@ -41,6 +83,7 @@ const Login = () => {
                                 name='password'
                                 className='shadow-md px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition duration-300 ease-in-out'
                                 placeholder='Enter your password'
+                                onChange={(e)=>setPassword(e.target.value)}
                             />
                         </div>
 
@@ -51,7 +94,7 @@ const Login = () => {
                             </div>
                             <Link to='/' className='text-blue-500 hover:underline'>Reset Password</Link>
                         </div>
-                        <button className='p-2 my-4 text-center w-full bg-indigo-500 hover:bg-indigo-400 text-white rounded'>Login</button>
+                        <button type='submit' className='p-2 my-4 text-center w-full bg-indigo-500 hover:bg-indigo-400 text-white rounded'>Login</button>
                         <div className='text-center'>
                             <span className='text-sm text-slate-500'>Don't have an account? </span>
                             <Link to='/signup' className='text-blue-500 hover:underline whitespace-nowrap'>Create Account</Link>

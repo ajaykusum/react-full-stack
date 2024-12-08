@@ -3,6 +3,8 @@ const express = require('express');
 const connectDB = require('./connectDB');
 const cors = require('cors');
 const userRouter = require('./routes/user.route');
+const newsRouter = require('./routes/news.route');
+const authUtil = require("./utils/auth-utils");
 
 
 const app = express();
@@ -20,6 +22,8 @@ connectDB(process.env.MONGO_URI)
 
 // user router
 app.use('/api/user', userRouter);
+app.all("/api/*", authUtil.authenticateLoginToken);
+app.use('/api',newsRouter);
 
 app.get('/', (req, res) => {
     res.json({ message: "hello from the server" });
@@ -27,4 +31,5 @@ app.get('/', (req, res) => {
 
 app.listen(PORT, () => {
     console.log(`app is running on http://localhost:${PORT}`);
+    console.log('server is running')
 })
